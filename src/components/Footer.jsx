@@ -13,7 +13,7 @@ export default function Footer() {
                     className="w-30 mr-2"
                 />
                 <div>
-                    <h2 className="text-4xl uppercase font-titles font-medium">
+                    <h2 className="text-4xl uppercase font-titles">
                     Copa Passa a Bola
                     </h2>
                     <p className="text-lg max-w-28">
