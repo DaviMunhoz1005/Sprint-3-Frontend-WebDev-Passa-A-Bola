@@ -21,9 +21,9 @@
         color: var(--color-font);
     }
 
-    h1 {
+    h1, h2 {
         font-family: var(--font-titles);
-        color: var(--color-font-bold);
+        font-weight: 500;
     }
 
     button {
