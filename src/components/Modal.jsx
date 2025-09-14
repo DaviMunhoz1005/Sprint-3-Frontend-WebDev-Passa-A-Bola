@@ -7,7 +7,7 @@ export default function Modal({ title, children, onClose }) {
                 onClick={onClose}
             />
             
-            <div className="relative bg-white p-6 rounded-lg shadow-lg w-11/12 md:w-10/12 lg:w-5/12 z-10">
+            <div className="relative bg-white p-6 rounded-lg shadow-lg w-11/12 md:w-10/12 lg:w-8/12 xl:w-5/12 z-10">
                 {title && <h2 className="text-4xl font-medium mb-4">{title}</h2>}
                 {children}
             </div>
