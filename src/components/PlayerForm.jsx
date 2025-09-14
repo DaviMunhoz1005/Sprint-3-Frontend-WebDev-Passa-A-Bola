@@ -22,8 +22,8 @@ export default function PlayerForm({ newPlayer, setNewPlayer, confirmForm, cance
 
     return (
         <form className="flex flex-col gap-6">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
-                <div className="flex flex-col gap-6 md:col-span-2">
+            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6 items-start">
+                <div className="flex flex-col gap-6 md:col-span-2 lg:col-span-3">
                     <FormField
                         type="text"
                         placeholder="Nome"
@@ -83,7 +83,7 @@ export default function PlayerForm({ newPlayer, setNewPlayer, confirmForm, cance
                     />
                 </div>
 
-                <div className="flex justify-center md:justify-end items-start w-full">
+                <div className="flex justify-center md:justify-end items-start w-full lg:col-span-2">
                     <FormField
                         isUpload
                         field="foto"

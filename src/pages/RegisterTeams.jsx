@@ -21,6 +21,7 @@ export default function RegisterTeam() {
         foto: null,
         documentoTipo: "",
         documentoFoto: null,
+        selfieDoc: null,
     });
 
     const validateEmail = (value) => {

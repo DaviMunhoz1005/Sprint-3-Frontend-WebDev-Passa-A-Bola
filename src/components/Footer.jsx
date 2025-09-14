@@ -40,7 +40,6 @@ export default function Footer() {
                 </ul>
             </nav>
 
-            {/* Redes sociais */}
             <address className="flex flex-col not-italic items-center">
                 <h3 className="text-4xl uppercase font-titles font-medium">
                 Nossas Redes

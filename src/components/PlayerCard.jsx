@@ -13,7 +13,6 @@ export default function PlayerCard({ player }) {
         return age;
     };
 
-
     return (
         <article className="flex flex-col items-center bg-pastel-pink rounded-xl shadow-md p-4">
             {player.foto ? (
