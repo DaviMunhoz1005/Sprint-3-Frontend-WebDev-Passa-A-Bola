@@ -2,10 +2,8 @@ export default function PlayerCard({ player }) {
     const calculateAge = (birthdate) => {
         if (!birthdate) return "";
         const [year, month, day] = birthdate.split("-").map(Number);
-        console.log(year, month, day);
         const today = new Date();
         let age = today.getFullYear() - year;
-        console.log(age)
         if (
             today.getMonth() < month ||
             (today.getMonth() === month && today.getDate() < day)

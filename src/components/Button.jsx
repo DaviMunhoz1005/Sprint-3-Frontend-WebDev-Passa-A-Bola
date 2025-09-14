@@ -23,11 +23,11 @@ export default function Button({
     };
 
     return (
-      <button
-          className={clsx(base, colors[variant], sizes[size], className)}
-          {...props}
-      >
-          {children}
-      </button>
+        <button
+            className={clsx(base, colors[variant], sizes[size], className)}
+            {...props}
+        >
+            {children}
+        </button>
     );
 }

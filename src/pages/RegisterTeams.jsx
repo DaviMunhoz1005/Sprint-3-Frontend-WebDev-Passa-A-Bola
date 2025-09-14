@@ -6,10 +6,12 @@ import { FaPlus } from "react-icons/fa";
 import Modal from "../components/Modal";
 import PlayerCard from "../components/PlayerCard";
 import PlayerForm from "../components/PlayerForm";
+import DocumentForm from "../components/DocumentForm";
 
 export default function RegisterTeam() {
     const [players, setPlayers] = useState([]);
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isDocModalOpen, setIsDocModalOpen] = useState(false);
     const [newPlayer, setNewPlayer] = useState({
         nome: "",
         posicao: "",
@@ -17,26 +19,24 @@ export default function RegisterTeam() {
         nascimento: "",
         email: "",
         foto: null,
+        documentoTipo: "",
+        documentoFoto: null,
     });
 
-    const handleAddPlayer = () => {
+    const validateEmail = (value) => {
+        return /\S+@\S+\.\S+/.test(value);
+    };
+
+    const handleConfirmPlayer = () => {
         const { nome, posicao, telefone, nascimento, email } = newPlayer;
 
-        if (!nome || !posicao || !telefone || !nascimento || !email) {
-            alert("Por favor, preencha todos os campos antes de adicionar a jogadora.");
+        if (!nome || !posicao || !telefone || !nascimento || !validateEmail(email)) {
+            alert("Por favor, preencha todos os campos antes de prosseguir.");
             return;
         }
 
-        setPlayers([...players, newPlayer]);
-        setNewPlayer({
-            nome: "",
-            posicao: "",
-            telefone: "",
-            nascimento: "",
-            email: "",
-            foto: null,
-        });
-        setIsModalOpen(false);
+        setIsModalOpen(false);     
+        setIsDocModalOpen(true);   
     };
 
     return (
@@ -98,8 +98,32 @@ export default function RegisterTeam() {
                     <PlayerForm
                         newPlayer={newPlayer}
                         setNewPlayer={setNewPlayer}
-                        confirmForm={handleAddPlayer}       
+                        confirmForm={handleConfirmPlayer}       
                         cancelForm={() => setIsModalOpen(false)}
+                    />
+                </Modal>
+            )}
+            {isDocModalOpen && (
+                <Modal title="Documento da Jogadora" onClose={() => setIsDocModalOpen(false)}>
+                    <DocumentForm
+                        newPlayer={newPlayer}
+                        setNewPlayer={setNewPlayer}
+                        confirmDoc={() => {
+                            setPlayers([...players, newPlayer]);
+                            console.log(newPlayer);
+                            setNewPlayer({
+                                nome: "",
+                                posicao: "",
+                                telefone: "",
+                                nascimento: "",
+                                email: "",
+                                foto: null,
+                                documentoTipo: "",
+                                documentoFoto: null,
+                            });
+                            setIsDocModalOpen(false);
+                        }}
+                        cancelDoc={() => setIsDocModalOpen(false)}
                     />
                 </Modal>
             )}
