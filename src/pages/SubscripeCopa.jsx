@@ -1,6 +1,5 @@
-// src/App.jsx
 import Header from "../components/Header";
-import Hero from "../components/Hero";
+import InfosSubscribeCopa from "../components/InfosSubscribeCopa";
 import About from "../components/About";
 import Footer from "../components/Footer";
 
@@ -9,7 +8,7 @@ export default function SubscribeCopa() {
         <div className="flex flex-col">
             <Header />
             <div className="max-w-8/12 mx-auto w-full px-4 shadow-2xl">
-                <Hero />
+                <InfosSubscribeCopa />
                 <About />
             </div>
             <Footer />

@@ -1,4 +1,3 @@
-// src/components/Hero.jsx
 import Button from "./Button";
 
 export default function Hero() {

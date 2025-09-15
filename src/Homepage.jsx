@@ -1,6 +1,6 @@
 import Footer from "./components/Footer";
 import Header from "./components/Header";
-import HeroSection from "./components/HeroSection";
+import SubscribeHome from "./components/SubscribeHome";
 import AboutSection from "./components/AboutSection";
 import LastEditionsSection from "./components/LastEditionSection";
 import OrganizersSection from "./components/OrganizerSection";
@@ -15,7 +15,7 @@ export default function Homepage() {
   return (
     <>
       <Header />
-        <HeroSection />
+        <SubscribeHome />
         <AboutSection />
         <LastEditionsSection copaImg={copaImg} trofeuImg={trofeuImg} />
         <OrganizersSection duasImg={duasImg} aleImg={aleImg} luanaImg={luanaImg} />
