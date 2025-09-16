@@ -1,10 +1,10 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
-import SubscribeCopa from './pages/SubscripeCopa'
+import Homepage from './Homepage'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <SubscribeCopa />
+    <Homepage />
   </StrictMode>,
 )
