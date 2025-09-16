@@ -1,13 +1,17 @@
+import { useNavigate } from "react-router-dom";
+
 export default function Header() {
+    const navigate = useNavigate();
+
     const links = [
-        { name: "Início", href: "#" },
-        { name: "Inscrição", href: "#" },
-        { name: "Meu Time", href: "#" },
+        { name: "Início", href: "/" },
+        { name: "Inscrição", href: "/subscribe" },
+        { name: "Meu Time", href: "/login" },
     ];
 
     const handleSelect = (e) => {
         const url = e.target.value;
-        if (url) window.location.href = url;
+        if (url) navigate(url);
     };
 
     return (
@@ -46,7 +50,7 @@ export default function Header() {
                         {links.map((link) => (
                             <li key={link.name}>
                                 <a
-                                    href={link.href}
+                                    onClick={() => navigate(link.href)}
                                     className="text-lg hover:underline"
                                 >
                                     {link.name}
