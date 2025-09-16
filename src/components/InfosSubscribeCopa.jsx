@@ -1,6 +1,9 @@
 import Button from "./Button";
+import { useNavigate } from "react-router-dom";
 
-export default function Hero() {
+export default function InfosSubscribeCopa() {
+    const navigate = useNavigate();
+
     return (
         <section className="w-full">
             <div className="flex justify-center">
@@ -16,7 +19,7 @@ export default function Hero() {
                         <p className="text-sm">Total de Vagas</p>
                         <p className="text-xl font-bold">10</p>
                     </div>
-                    <Button size="medium">Inscrever-se</Button>
+                    <Button size="medium" onClick={() => navigate("/login")}>Inscrever-se</Button>
                     <div>
                         <p className="text-sm">Vagas Preenchidas</p>
                         <p className="text-xl font-bold">8</p>

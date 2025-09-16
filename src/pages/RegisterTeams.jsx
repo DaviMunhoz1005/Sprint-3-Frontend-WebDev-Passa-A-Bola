@@ -7,8 +7,11 @@ import Modal from "../components/Modal";
 import PlayerCard from "../components/PlayerCard";
 import PlayerForm from "../components/PlayerForm";
 import DocumentForm from "../components/DocumentForm";
+import { useNavigate } from "react-router-dom";
 
 export default function RegisterTeam() {
+    const navigate = useNavigate();
+
     const [players, setPlayers] = useState([]);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [isDocModalOpen, setIsDocModalOpen] = useState(false);
@@ -85,7 +88,7 @@ export default function RegisterTeam() {
                     </section>
 
                     <div className="w-full flex justify-center mt-6">
-                        <Button type="submit" size="medium">Cadastrar Time</Button>
+                        <Button type="submit" size="medium" onClick={() => navigate("/subscribe")}>Cadastrar Time</Button>
                     </div>
                 </section>
             </main>

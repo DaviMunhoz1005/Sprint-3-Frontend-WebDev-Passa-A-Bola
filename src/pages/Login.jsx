@@ -1,8 +1,11 @@
 import Footer from "../components/Footer";
 import Input from "../components/Input";
 import Button from "../components/Button";
+import { useNavigate } from "react-router-dom";
 
 export default function Login() {
+    const navigate = useNavigate();
+
     return (
         <div className="bg-pastel-pink w-full min-h-screen flex flex-col">
             <main className="flex flex-col flex-grow items-center justify-center">
@@ -21,8 +24,8 @@ export default function Login() {
                             Esqueci a Senha
                         </a>
                         <div className="flex md:flex-col lg:flex-row gap-4 w-full items-center">
-                            <Button type="submit">Entrar</Button>
-                            <Button type="button">Cadastre-se</Button>
+                            <Button type="submit" onClick={() => navigate("/subscribe")}>Entrar</Button>
+                            <Button type="button" onClick={() => navigate("/register")}>Cadastre-se</Button>
                         </div>
                     </form>
                 </section>
